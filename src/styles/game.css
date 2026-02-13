@@ -9,9 +9,16 @@
 
 html, body, #root {
   margin: 0;
+  padding: 0;
   height: 100%;
+  width: 100%;
   font-family: 'Quicksand', sans-serif;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .app {
@@ -19,7 +26,27 @@ html, body, #root {
   height: 100vh;
   background: linear-gradient(180deg, #87CEEB 0%, #4682B4 100%);
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Force landscape layout on portrait mobile */
+@media (orientation: portrait) and (max-width: 768px) {
+  .app {
+    transform: rotate(90deg);
+    transform-origin: center center;
+    width: 100vh;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }
 
 /* Game Container */
@@ -509,109 +536,319 @@ html, body, #root {
 }
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .modal h1 {
-    font-size: 24px;
-  }
-
-  .modal h2 {
-    font-size: 20px;
-  }
-
-  .modal p {
-    font-size: 14px;
-  }
-
-  .score {
-    padding: 10px 20px;
-    top: 10px;
-  }
-
-  .score-text {
-    font-size: 16px;
-  }
-
-  .target {
-    font-size: 14px;
-  }
-
-  .encouragement-bubble {
-    font-size: 14px;
-    padding: 12px 16px;
-    top: 70px;
-  }
-
-  .jump-btn {
-    width: 80px;
-    height: 80px;
-    font-size: 16px;
-    bottom: 50px;
-    right: 20px;
-  }
-
-  .player {
-    width: 80px;
-    height: 100px;
-  }
-
-  .player-character {
-    width: 70px;
-    height: 70px;
-  }
-
-  .obstacle {
-    width: 60px;
-    height: 45px;
-  }
-
-  .obstacle-icon {
-    font-size: 35px;
-  }
-
-  .obstacle-label {
-    font-size: 11px;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .modal h1 {
-    font-size: 20px;
-    margin-bottom: 8px;
+    font-size: 22px;
   }
 
   .modal h2 {
     font-size: 18px;
-    margin-bottom: 10px;
+  }
+
+  .modal p {
+    font-size: 13px;
+  }
+
+  .score {
+    padding: 8px 16px;
+    top: 10px;
+  }
+
+  .score-text {
+    font-size: 14px;
+  }
+
+  .target {
+    font-size: 12px;
+  }
+
+  .encouragement-bubble {
+    font-size: 13px;
+    padding: 10px 14px;
+    top: 60px;
+  }
+
+  .jump-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+    bottom: 45px;
+    right: 15px;
+  }
+
+  .player {
+    width: 70px;
+    height: 90px;
+  }
+
+  .player-character {
+    width: 60px;
+    height: 60px;
+  }
+
+  .obstacle {
+    width: 55px;
+    height: 40px;
+  }
+
+  .obstacle-icon {
+    font-size: 32px;
+  }
+
+  .obstacle-label {
+    font-size: 10px;
+  }
+
+  .cloud {
+    font-size: 35px;
+  }
+
+  .building {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal h1 {
+    font-size: 20px;
+  }
+
+  .modal h2 {
+    font-size: 16px;
   }
 
   .modal p {
     font-size: 12px;
-    margin-bottom: 6px;
   }
 
-  .message {
-    padding: 12px;
-    margin: 12px 0;
+  .score {
+    padding: 6px 12px;
+    top: 8px;
   }
 
-  .btn-primary {
-    padding: 12px 28px;
-    font-size: 16px;
-    margin-top: 10px;
+  .score-text {
+    font-size: 13px;
+  }
+
+  .target {
+    font-size: 11px;
+  }
+
+  .encouragement-bubble {
+    font-size: 12px;
+    padding: 8px 12px;
+    top: 55px;
   }
 
   .jump-btn {
     width: 65px;
     height: 65px;
     font-size: 13px;
-    bottom: 35px;
+    bottom: 40px;
+    right: 12px;
+  }
+
+  .player {
+    width: 60px;
+    height: 80px;
+  }
+
+  .player-character {
+    width: 55px;
+    height: 55px;
+  }
+
+  .obstacle {
+    width: 50px;
+    height: 38px;
+  }
+
+  .obstacle-icon {
+    font-size: 28px;
+  }
+
+  .obstacle-label {
+    font-size: 9px;
+  }
+
+  .cloud {
+    font-size: 30px;
+  }
+
+  .building {
+    font-size: 50px;
+  }
+
+  .btn-primary {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal h1 {
+    font-size: 18px;
+  }
+
+  .modal h2 {
+    font-size: 15px;
+  }
+
+  .modal p {
+    font-size: 11px;
   }
 
   .score {
-    padding: 8px 16px;
+    padding: 5px 10px;
+    top: 5px;
   }
 
   .score-text {
+    font-size: 12px;
+  }
+
+  .target {
+    font-size: 10px;
+  }
+
+  .encouragement-bubble {
+    font-size: 11px;
+    padding: 6px 10px;
+    top: 50px;
+  }
+
+  .jump-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    bottom: 35px;
+    right: 10px;
+  }
+
+  .player {
+    width: 55px;
+    height: 75px;
+  }
+
+  .player-character {
+    width: 50px;
+    height: 50px;
+  }
+
+  .obstacle {
+    width: 45px;
+    height: 35px;
+  }
+
+  .obstacle-icon {
+    font-size: 25px;
+  }
+
+  .obstacle-label {
+    font-size: 8px;
+  }
+
+  .btn-primary {
+    padding: 12px 28px;
     font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .modal h1 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .modal h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .modal p {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .message {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .btn-primary {
+    padding: 10px 24px;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .jump-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 11px;
+    bottom: 30px;
+  }
+
+  .score {
+    padding: 6px 12px;
+  }
+
+  .score-text {
+    font-size: 12px;
+  }
+
+  .target {
+    font-size: 10px;
+  }
+
+  .encouragement-bubble {
+    font-size: 11px;
+    padding: 6px 10px;
+    top: 45px;
+  }
+
+  .player {
+    width: 55px;
+    height: 70px;
+  }
+
+  .player-character {
+    width: 50px;
+    height: 50px;
+  }
+
+  .obstacle {
+    width: 45px;
+    height: 35px;
+  }
+
+  .obstacle-icon {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .player {
+    width: 110px;
+    height: 130px;
+  }
+
+  .player-character {
+    width: 95px;
+    height: 95px;
+  }
+
+  .obstacle {
+    width: 75px;
+    height: 55px;
+  }
+
+  .obstacle-icon {
+    font-size: 45px;
+  }
+
+  .jump-btn {
+    width: 110px;
+    height: 110px;
+    font-size: 22px;
   }
 }

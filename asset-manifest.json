@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mochi/static/css/main.10729122.css",
-    "main.js": "/mochi/static/js/main.9a8c58ff.js",
+    "main.js": "/mochi/static/js/main.758334cb.js",
     "index.html": "/mochi/index.html",
     "main.10729122.css.map": "/mochi/static/css/main.10729122.css.map",
-    "main.9a8c58ff.js.map": "/mochi/static/js/main.9a8c58ff.js.map"
+    "main.758334cb.js.map": "/mochi/static/js/main.758334cb.js.map"
   },
   "entrypoints": [
     "static/css/main.10729122.css",
-    "static/js/main.9a8c58ff.js"
+    "static/js/main.758334cb.js"
   ]
 }

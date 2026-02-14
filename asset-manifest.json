@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mochi/static/css/main.48d905df.css",
-    "main.js": "/mochi/static/js/main.ec1922f5.js",
+    "main.css": "/mochi/static/css/main.f0d85bd5.css",
+    "main.js": "/mochi/static/js/main.8eee457d.js",
     "index.html": "/mochi/index.html",
-    "main.48d905df.css.map": "/mochi/static/css/main.48d905df.css.map",
-    "main.ec1922f5.js.map": "/mochi/static/js/main.ec1922f5.js.map"
+    "main.f0d85bd5.css.map": "/mochi/static/css/main.f0d85bd5.css.map",
+    "main.8eee457d.js.map": "/mochi/static/js/main.8eee457d.js.map"
   },
   "entrypoints": [
-    "static/css/main.48d905df.css",
-    "static/js/main.ec1922f5.js"
+    "static/css/main.f0d85bd5.css",
+    "static/js/main.8eee457d.js"
   ]
 }

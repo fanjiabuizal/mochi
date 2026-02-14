@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Player from "./Player";
 import Obstacle from "./Obstacle";
+import { playSound } from "../utils/sound";
 
 export default function Game({ onGameOver, onFinish }) {
   const [playerLeft, setPlayerLeft] = useState(40);
@@ -23,11 +24,16 @@ export default function Game({ onGameOver, onFinish }) {
   const GROUND_HEIGHT = 40;
   const JUMP_STRENGTH = 30;
   const GRAVITY = 0.8;
-  const PLAYER_WIDTH = 100;
-  const PLAYER_HEIGHT = 120;
+  const PLAYER_WIDTH = 70;
+  const PLAYER_HEIGHT = 70;
   const OBSTACLE_WIDTH = 70;
   const OBSTACLE_HEIGHT = 50;
   const WIN_SCORE = 14;
+
+  // Adjust jump strength based on screen size
+  const isMobile = window.innerWidth <= 768;
+  const isLandscape = window.innerWidth > window.innerHeight;
+  const adjustedJumpStrength = (isMobile && isLandscape) ? 20 : JUMP_STRENGTH;
 
   const encouragements = [
     "POV: Cewe baca map lebih cepet dari loading Google Maps 🗺️⚡",
@@ -48,9 +54,10 @@ export default function Game({ onGameOver, onFinish }) {
     }
     if (canJump && playerBottom <= GROUND_HEIGHT + 5 && !gameEnded) {
       setCanJump(false);
-      jumpVelocityRef.current = JUMP_STRENGTH;
+      jumpVelocityRef.current = adjustedJumpStrength;
       setPlayerLeft(prev => Math.min(prev + 40, 120));
       setJumpTriggered(true);
+      playSound.jump(); // Play jump sound
       
       // Clear previous timeout to prevent memory leak
       if (jumpTimeoutRef.current) {
@@ -175,6 +182,8 @@ export default function Game({ onGameOver, onFinish }) {
           ) {
             // FIX BUG #3: Prevent race condition
             if (!gameEnded) {
+              playSound.hit(); // Play hit sound
+              setTimeout(() => playSound.gameOver(), 100); // Play game over sound
               setGameEnded(true);
               onGameOver();
             }
@@ -187,6 +196,7 @@ export default function Game({ onGameOver, onFinish }) {
 
       // FIX BUG #3: Check win condition with game ended flag
       if (score >= WIN_SCORE && !gameEnded) {
+        playSound.success(); // Play success sound
         setGameEnded(true);
         onFinish();
       }

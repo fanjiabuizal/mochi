@@ -183,8 +183,8 @@ html, body, #root {
 /* Player */
 .player {
   position: absolute;
-  width: 100px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
   z-index: 5;
   transition: bottom 0.05s linear, left 0.3s ease-out;
   display: flex;
@@ -194,8 +194,8 @@ html, body, #root {
 }
 
 .player-character {
-  width: 90px;
-  height: 90px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   animation: bounce 0.5s infinite alternate;
 }
@@ -521,156 +521,174 @@ html, body, #root {
 
 /* Responsive */
 @media (max-width: 768px) and (orientation: portrait) {
+  .game-container {
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
+
   .modal h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .modal h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .modal p {
-    font-size: 12px;
-  }
-
-  .score {
-    padding: 6px 12px;
-    top: 8px;
-  }
-
-  .score-text {
     font-size: 13px;
   }
 
+  .score {
+    padding: 8px 14px;
+    top: 10px;
+  }
+
+  .score-text {
+    font-size: 14px;
+  }
+
   .target {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .encouragement-bubble {
-    font-size: 12px;
-    padding: 8px 12px;
-    top: 55px;
+    font-size: 13px;
+    padding: 10px 14px;
+    top: 65px;
   }
 
   .jump-btn {
-    width: 70px;
-    height: 70px;
-    font-size: 14px;
-    bottom: 50px;
-    right: 15px;
+    width: 75px;
+    height: 75px;
+    font-size: 15px;
+    bottom: 55px;
+    right: 18px;
   }
 
   .player {
-    width: 65px;
-    height: 85px;
+    width: 70px;
+    height: 90px;
   }
 
   .player-character {
-    width: 58px;
-    height: 58px;
+    width: 62px;
+    height: 62px;
   }
 
   .obstacle {
-    width: 52px;
-    height: 38px;
+    width: 58px;
+    height: 42px;
   }
 
   .obstacle-icon {
-    font-size: 30px;
+    font-size: 33px;
   }
 
   .obstacle-label {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .cloud {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .building {
-    font-size: 55px;
+    font-size: 62px;
   }
 
   .btn-primary {
-    padding: 14px 32px;
-    font-size: 16px;
+    padding: 15px 35px;
+    font-size: 17px;
   }
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
   .modal h1 {
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
   }
 
   .modal h2 {
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 8px;
   }
 
   .modal p {
-    font-size: 11px;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .message {
+    padding: 10px;
+    margin: 8px 0;
   }
 
   .score {
-    padding: 6px 12px;
-    top: 8px;
+    padding: 5px 10px;
+    top: 6px;
   }
 
   .score-text {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .target {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .encouragement-bubble {
-    font-size: 12px;
-    padding: 8px 12px;
-    top: 50px;
+    font-size: 11px;
+    padding: 6px 10px;
+    top: 45px;
   }
 
   .jump-btn {
-    width: 65px;
-    height: 65px;
-    font-size: 13px;
-    bottom: 40px;
-    right: 12px;
+    width: 60px;
+    height: 60px;
+    font-size: 12px;
+    bottom: 35px;
+    right: 10px;
   }
 
   .player {
-    width: 60px;
-    height: 80px;
+    width: 55px;
+    height: 70px;
   }
 
   .player-character {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
 
   .obstacle {
-    width: 50px;
-    height: 38px;
+    width: 45px;
+    height: 35px;
   }
 
   .obstacle-icon {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .obstacle-label {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .cloud {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .building {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .btn-primary {
-    padding: 12px 28px;
-    font-size: 14px;
+    padding: 10px 24px;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .ground {
+    height: 35px;
   }
 }
 
@@ -966,13 +984,13 @@ html, body, #root {
 
 @media (min-width: 1024px) {
   .player {
-    width: 110px;
-    height: 130px;
+    width: 80px;
+    height: 80px;
   }
 
   .player-character {
-    width: 95px;
-    height: 95px;
+    width: 75px;
+    height: 75px;
   }
 
   .obstacle {

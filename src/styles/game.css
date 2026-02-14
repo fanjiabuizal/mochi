@@ -521,9 +521,14 @@ html, body, #root {
 
 /* Responsive */
 @media (max-width: 768px) and (orientation: portrait) {
+  html, body, #root {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .game-container {
-    transform: scale(1.2);
-    transform-origin: center center;
+    transform: none;
+    height: 100%;
   }
 
   .modal h1 {
@@ -688,7 +693,15 @@ html, body, #root {
   }
 
   .ground {
-    height: 35px;
+    height: 30px;
+  }
+
+  .obstacle {
+    bottom: 30px;
+  }
+
+  .building {
+    bottom: 30px;
   }
 }
 

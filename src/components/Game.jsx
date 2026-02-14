@@ -33,7 +33,7 @@ export default function Game({ onGameOver, onFinish }) {
   // Adjust jump strength based on screen size
   const isMobile = window.innerWidth <= 768;
   const isLandscape = window.innerWidth > window.innerHeight;
-  const adjustedJumpStrength = (isMobile && isLandscape) ? 20 : JUMP_STRENGTH;
+  const adjustedJumpStrength = (isMobile && isLandscape) ? 18 : (isMobile ? 22 : JUMP_STRENGTH);
 
   const encouragements = [
     "POV: Cewe baca map lebih cepet dari loading Google Maps 🗺️⚡",
